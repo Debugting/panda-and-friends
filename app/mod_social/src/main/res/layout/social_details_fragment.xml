@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/mWebContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ll_bottom"
+        android:layout_below="@+id/toolbar" />
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="24dp">
+
+        <LinearLayout
+            android:id="@+id/ll_input"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_bg_input"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="16sp"
+                android:layout_height="16sp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:src="@mipmap/comment_write" />
+
+            <TextView
+                android:id="@+id/et_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="写评论..."
+                android:textColor="@color/textColor66"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btn_praised"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:padding="5dp"
+            android:src="@drawable/praise_selector" />
+
+        <ImageView
+            android:id="@+id/btn_collected"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:padding="5dp"
+            android:src="@drawable/collect_selector" />
+
+        <ImageView
+            android:id="@+id/iv_share"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:padding="5dp"
+            android:src="@mipmap/social_share" />
+
+    </LinearLayout>
+
+    <com.example.mod_social.slike.SuperLikeLayout
+        android:id="@+id/mSuperLikeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</RelativeLayout>

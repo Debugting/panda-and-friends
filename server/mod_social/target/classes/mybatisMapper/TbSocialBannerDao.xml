@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.tbsocialbanner.dao.TbSocialBannerDao">
+
+	<resultMap id="BaseResultMap" type="com.example.tbsocialbanner.bean.TbSocialBanner">
+
+		<id column="id" jdbcType="INTEGER" property="id" />
+
+		<result column="imgUrl" jdbcType="VARCHAR" property="imgUrl" />
+
+		<result column="content" jdbcType="LONGVARCHAR" property="content" />
+
+		<result column="dataType" jdbcType="VARCHAR" property="dataType" />
+
+		<result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+
+	</resultMap>
+
+	<insert id="insert" keyColumn="id" keyProperty="id" useGeneratedKeys="true" >
+		insert into tb_social_banner (
+		imgUrl,
+		content,
+		dataType
+		)
+ 	   values (
+		 #{imgUrl,jdbcType=VARCHAR},
+		 #{content,jdbcType=LONGVARCHAR},
+		 #{dataType,jdbcType=VARCHAR}
+		)
+
+
+	</insert>
+
+	<delete id="deleteByPrimaryKey" >
+		delete from  tb_social_banner 
+
+		where id = #{id} 
+ 
+
+	</delete>
+
+	<update id="update" >
+		update tb_social_banner
+		<set>
+			<if test="imgUrl!=null and imgUrl!=''">imgUrl = #{imgUrl,jdbcType=VARCHAR}, </if>
+			<if test="content!=null and content!=''">content = #{content,jdbcType=LONGVARCHAR}, </if>
+			<if test="dataType!=null and dataType!=''">dataType = #{dataType,jdbcType=VARCHAR}, </if>
+			<if test="createTime!=null">createTime = #{createTime,jdbcType=TIMESTAMP}, </if>
+		</set>
+		where id=#{id}
+
+	</update>
+
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap" >
+		select
+		id,
+		imgUrl,
+		content,
+		dataType,
+		createTime
+		from tb_social_banner
+		where id = #{id,jdbcType=INTEGER}
+
+	</select>
+
+	<select id="selectAll" resultMap="BaseResultMap" >
+		select
+		id,
+		imgUrl,
+		content,
+		dataType,
+		createTime
+		from tb_social_banner
+		<where>
+		<if test="id!=null "> and tb_social_banner.id = #{id,jdbcType=INTEGER}</if>
+		<if test="imgUrl!=null and imgUrl!=''"> and tb_social_banner.imgUrl = #{imgUrl,jdbcType=VARCHAR}</if>
+		<if test="content!=null and content!=''"> and tb_social_banner.content = #{content,jdbcType=LONGVARCHAR}</if>
+		<if test="dataType!=null and dataType!=''"> and tb_social_banner.dataType = #{dataType,jdbcType=VARCHAR}</if>
+		<if test="createTime!=null "> and tb_social_banner.createTime = #{createTime,jdbcType=TIMESTAMP}</if>
+		<if test=" startTime!=null and startTime!='' and endTime!=null and endTime!='' "> and tb_social_banner.createTime BETWEEN #{startTime} and #{endTime}</if>
+		</where>
+		<choose>
+          <when test="orderByString!=null and orderByString!=''">
+              ${orderByString}
+          </when>
+          <otherwise>
+              order by id desc
+          </otherwise>
+      </choose>
+
+	</select>
+
+	<select id="selectByCondition" resultMap="BaseResultMap" >
+		select
+		id,
+		imgUrl,
+		content,
+		dataType,
+		createTime
+		from tb_social_banner
+		<where>
+		<if test="id!=null "> and tb_social_banner.id = #{id,jdbcType=INTEGER}</if>
+		<if test="imgUrl!=null and imgUrl!=''"> and tb_social_banner.imgUrl = #{imgUrl,jdbcType=VARCHAR}</if>
+		<if test="content!=null and content!=''"> and tb_social_banner.content = #{content,jdbcType=LONGVARCHAR}</if>
+		<if test="dataType!=null and dataType!=''"> and tb_social_banner.dataType = #{dataType,jdbcType=VARCHAR}</if>
+		<if test="createTime!=null "> and tb_social_banner.createTime = #{createTime,jdbcType=TIMESTAMP}</if>
+		<if test=" startTime!=null and startTime!='' and endTime!=null and endTime!='' "> and tb_social_banner.createTime BETWEEN #{startTime} and #{endTime}</if>
+		</where>
+		<choose>
+          <when test="orderByString!=null and orderByString!=''">
+              ${orderByString}
+          </when>
+          <otherwise>
+              order by id desc
+          </otherwise>
+      </choose>
+
+	</select>
+
+</mapper>

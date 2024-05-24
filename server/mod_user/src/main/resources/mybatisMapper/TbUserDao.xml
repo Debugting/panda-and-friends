@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.tbuser.dao.TbUserDao">
+
+	<resultMap id="BaseResultMap" type="com.example.tbuser.bean.TbUser">
+
+		<id column="id" jdbcType="INTEGER" property="id" />
+
+		<result column="act" jdbcType="VARCHAR" property="act" />
+
+		<result column="pwd" jdbcType="VARCHAR" property="pwd" />
+
+		<result column="name" jdbcType="VARCHAR" property="name" />
+
+		<result column="sex" jdbcType="INTEGER" property="sex" />
+
+		<result column="birthday" jdbcType="TIMESTAMP" property="birthday" />
+
+		<result column="province" jdbcType="VARCHAR" property="province" />
+
+		<result column="question" jdbcType="VARCHAR" property="question" />
+
+		<result column="answer" jdbcType="VARCHAR" property="answer" />
+
+		<result column="imgUrl" jdbcType="VARCHAR" property="imgUrl" />
+
+		<result column="userType" jdbcType="INTEGER" property="userType" />
+
+		<result column="status" jdbcType="INTEGER" property="status" />
+
+	</resultMap>
+
+	<insert id="insert" keyColumn="id" keyProperty="id" useGeneratedKeys="true" >
+		insert into tb_user (
+		act,
+		pwd,
+		name,
+		sex,
+		birthday,
+		province,
+		question,
+		answer,
+		imgUrl,
+		userType,
+		status
+		)
+ 	   values (
+		 #{act,jdbcType=VARCHAR},
+		 #{pwd,jdbcType=VARCHAR},
+		 #{name,jdbcType=VARCHAR},
+		 #{sex,jdbcType=INTEGER},
+		 #{birthday,jdbcType=TIMESTAMP},
+		 #{province,jdbcType=VARCHAR},
+		 #{question,jdbcType=VARCHAR},
+		 #{answer,jdbcType=VARCHAR},
+		 #{imgUrl,jdbcType=VARCHAR},
+		 #{userType,jdbcType=INTEGER},
+		 #{status,jdbcType=INTEGER}
+		)
+
+
+	</insert>
+
+	<delete id="deleteByPrimaryKey" >
+		delete from  tb_user 
+
+		where id = #{id} 
+ 
+
+	</delete>
+
+	<update id="update" >
+		update tb_user
+		<set>
+			<if test="act!=null and act!=''">act = #{act,jdbcType=VARCHAR}, </if>
+			<if test="pwd!=null and pwd!=''">pwd = #{pwd,jdbcType=VARCHAR}, </if>
+			<if test="name!=null and name!=''">name = #{name,jdbcType=VARCHAR}, </if>
+			<if test="sex!=null">sex = #{sex,jdbcType=INTEGER}, </if>
+			<if test="birthday!=null">birthday = #{birthday,jdbcType=TIMESTAMP}, </if>
+			<if test="province!=null and province!=''">province = #{province,jdbcType=VARCHAR}, </if>
+			<if test="question!=null and question!=''">question = #{question,jdbcType=VARCHAR}, </if>
+			<if test="answer!=null and answer!=''">answer = #{answer,jdbcType=VARCHAR}, </if>
+			<if test="imgUrl!=null and imgUrl!=''">imgUrl = #{imgUrl,jdbcType=VARCHAR}, </if>
+			<if test="userType!=null">userType = #{userType,jdbcType=INTEGER}, </if>
+			<if test="status!=null">status = #{status,jdbcType=INTEGER}, </if>
+		</set>
+		where id=#{id}
+
+	</update>
+
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap" >
+		select
+		id,
+		act,
+		pwd,
+		name,
+		sex,
+		birthday,
+		province,
+		question,
+		answer,
+		imgUrl,
+		userType,
+		status
+		from tb_user
+		where id = #{id,jdbcType=INTEGER}
+
+	</select>
+
+	<select id="selectAll" resultMap="BaseResultMap" >
+		select
+		id,
+		act,
+		pwd,
+		name,
+		sex,
+		birthday,
+		province,
+		question,
+		answer,
+		imgUrl,
+		userType,
+		status
+		from tb_user
+		<where>
+		<if test="id!=null "> and tb_user.id = #{id,jdbcType=INTEGER}</if>
+		<if test="act!=null and act!=''"> and tb_user.act = #{act,jdbcType=VARCHAR}</if>
+		<if test="pwd!=null and pwd!=''"> and tb_user.pwd = #{pwd,jdbcType=VARCHAR}</if>
+		<if test="name!=null and name!=''"> and tb_user.name = #{name,jdbcType=VARCHAR}</if>
+		<if test="sex!=null "> and tb_user.sex = #{sex,jdbcType=INTEGER}</if>
+		<if test="birthday!=null "> and tb_user.birthday = #{birthday,jdbcType=TIMESTAMP}</if>
+		<if test="province!=null and province!=''"> and tb_user.province = #{province,jdbcType=VARCHAR}</if>
+		<if test="question!=null and question!=''"> and tb_user.question = #{question,jdbcType=VARCHAR}</if>
+		<if test="answer!=null and answer!=''"> and tb_user.answer = #{answer,jdbcType=VARCHAR}</if>
+		<if test="imgUrl!=null and imgUrl!=''"> and tb_user.imgUrl = #{imgUrl,jdbcType=VARCHAR}</if>
+		<if test="userType!=null "> and tb_user.userType = #{userType,jdbcType=INTEGER}</if>
+		<if test="status!=null "> and tb_user.status = #{status,jdbcType=INTEGER}</if>
+		</where>
+		<choose>
+          <when test="orderByString!=null and orderByString!=''">
+              ${orderByString}
+          </when>
+          <otherwise>
+              order by id desc
+          </otherwise>
+      </choose>
+
+	</select>
+
+	<select id="selectByCondition" resultMap="BaseResultMap" >
+		select
+		id,
+		act,
+		pwd,
+		name,
+		sex,
+		birthday,
+		province,
+		question,
+		answer,
+		imgUrl,
+		userType,
+		status
+		from tb_user
+		<where>
+		<if test="id!=null "> and tb_user.id = #{id,jdbcType=INTEGER}</if>
+		<if test="act!=null and act!=''"> and tb_user.act = #{act,jdbcType=VARCHAR}</if>
+		<if test="pwd!=null and pwd!=''"> and tb_user.pwd = #{pwd,jdbcType=VARCHAR}</if>
+		<if test="name!=null and name!=''"> and tb_user.name = #{name,jdbcType=VARCHAR}</if>
+		<if test="sex!=null "> and tb_user.sex = #{sex,jdbcType=INTEGER}</if>
+		<if test="birthday!=null "> and tb_user.birthday = #{birthday,jdbcType=TIMESTAMP}</if>
+		<if test="province!=null and province!=''"> and tb_user.province = #{province,jdbcType=VARCHAR}</if>
+		<if test="question!=null and question!=''"> and tb_user.question = #{question,jdbcType=VARCHAR}</if>
+		<if test="answer!=null and answer!=''"> and tb_user.answer = #{answer,jdbcType=VARCHAR}</if>
+		<if test="imgUrl!=null and imgUrl!=''"> and tb_user.imgUrl = #{imgUrl,jdbcType=VARCHAR}</if>
+		<if test="userType!=null "> and tb_user.userType = #{userType,jdbcType=INTEGER}</if>
+		<if test="status!=null "> and tb_user.status = #{status,jdbcType=INTEGER}</if>
+		</where>
+		<choose>
+          <when test="orderByString!=null and orderByString!=''">
+              ${orderByString}
+          </when>
+          <otherwise>
+              order by id desc
+          </otherwise>
+      </choose>
+
+	</select>
+
+</mapper>

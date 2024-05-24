@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/bgColor"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:orientation="vertical"
+            android:paddingStart="8dp"
+            android:paddingTop="32dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.example.lib_frame.widgets.IconFontImageView
+                    android:id="@+id/iv_img_slide"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:text="@string/ic_default_avatar"
+                    app:radius="33dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="姓名"
+                        android:textColor="@color/textColorFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_word"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text="该用户很懒，没有个性签名！"
+                        android:textColor="@color/white_alpha_224"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="4dp">
+
+                <LinearLayout
+                    android:id="@+id/menu_change_info"
+                    style="@style/menu">
+
+                    <!--                    <ImageView-->
+                    <!--                        style="@style/icon"-->
+                    <!--                        android:src="@mipmap/ic_info" />-->
+
+                    <TextView
+                        style="@style/menu_text"
+                        android:text="个人资料"
+                        app:drawableTint="?attr/iconColor" />
+
+                    <ImageView style="@style/menu_arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/menu_change_pwd"
+                    style="@style/menu">
+
+                    <!--                    <ImageView-->
+                    <!--                        style="@style/icon"-->
+                    <!--                        android:src="@mipmap/ic_change_pwd" />-->
+
+                    <TextView
+                        style="@style/menu_text"
+                        android:text="修改密码"
+                        app:drawableTint="?attr/iconColor" />
+
+                    <ImageView style="@style/menu_arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/menu_address_manager"
+                    style="@style/menu"
+                    android:visibility="gone">
+
+                    <!--                    <ImageView-->
+                    <!--                        style="@style/icon"-->
+                    <!--                        android:src="@mipmap/ic_location" />-->
+
+                    <TextView
+                        style="@style/menu_text"
+                        android:text="地址管理"
+                        app:drawableTint="?attr/iconColor" />
+
+                    <ImageView style="@style/menu_arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/menu_collected_list"
+                    style="@style/menu"
+                    android:visibility="gone">
+
+                    <!--                    <ImageView-->
+                    <!--                        style="@style/icon"-->
+                    <!--                        android:src="@mipmap/ic_collect_n" />-->
+
+                    <TextView
+                        style="@style/menu_text"
+                        android:text="我的收藏"
+                        app:drawableTint="?attr/iconColor" />
+
+                    <ImageView style="@style/menu_arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/menu_consult"
+                    style="@style/menu"
+                    android:visibility="gone">
+
+                    <!--                    <ImageView-->
+                    <!--                        style="@style/icon"-->
+                    <!--                        android:src="@mipmap/ic_menu_consult" />-->
+
+                    <TextView
+                        style="@style/menu_text"
+                        android:text="客服咨询"
+                        app:drawableTint="?attr/iconColor" />
+
+                    <ImageView style="@style/menu_arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/menu_theme"
+                    style="@style/menu">
+
+                    <!--                    <ImageView-->
+                    <!--                        style="@style/icon"-->
+                    <!--                        android:src="@mipmap/ic_theme" />-->
+
+                    <TextView
+                        style="@style/menu_text"
+                        android:text="主题中心"
+                        app:drawableTint="?attr/iconColor" />
+
+                    <ImageView style="@style/menu_arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/menu_login_out"
+                    style="@style/menu">
+
+                    <!--                    <ImageView-->
+                    <!--                        style="@style/icon"-->
+                    <!--                        android:src="@mipmap/ic_login_out" />-->
+
+                    <TextView
+                        style="@style/menu_text"
+                        android:text="退出登录"
+                        app:drawableTint="?attr/iconColor" />
+
+                    <ImageView style="@style/menu_arrow" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</merge>

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- 菜单递归-->
+<li class="layui-nav-item" th:fragment="menu(auths)" th:each="auth:${auths}">
+    <a href="javascript:void(0)" th:if="${auth.shows==0}" th:data-url="@{'/'+${auth.href}}">
+        <i th:class="${auth.icon}" th:data-icon="${auth.icon}"></i>
+        <cite th:text="${auth.name}"></cite>
+        <span th:if="${auth.children!=null}" class="layui-nav-more"></span>
+    </a>
+</li>
+</html>

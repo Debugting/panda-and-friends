@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/mod_accounting/mod_accounting.iml" filepath="$PROJECT_DIR$/mod_accounting/mod_accounting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mod_check_in/mod_check_in.iml" filepath="$PROJECT_DIR$/mod_check_in/mod_check_in.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mod_course/mod_course.iml" filepath="$PROJECT_DIR$/mod_course/mod_course.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mod_house/mod_house.iml" filepath="$PROJECT_DIR$/mod_house/mod_house.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mod_note/mod_note.iml" filepath="$PROJECT_DIR$/mod_note/mod_note.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mod_notice/mod_notice.iml" filepath="$PROJECT_DIR$/mod_notice/mod_notice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mod_paper/mod_paper.iml" filepath="$PROJECT_DIR$/mod_paper/mod_paper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mod_programme/mod_programme.iml" filepath="$PROJECT_DIR$/mod_programme/mod_programme.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mod_schedule/mod_schedule.iml" filepath="$PROJECT_DIR$/mod_schedule/mod_schedule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mod_social/mod_social.iml" filepath="$PROJECT_DIR$/mod_social/mod_social.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mod_user/mod_user.iml" filepath="$PROJECT_DIR$/mod_user/mod_user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/server.iml" filepath="$PROJECT_DIR$/server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/server-common/server-common.iml" filepath="$PROJECT_DIR$/server-common/server-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/server-generator/server-generator.iml" filepath="$PROJECT_DIR$/server-generator/server-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/server-sys/server-sys.iml" filepath="$PROJECT_DIR$/server-sys/server-sys.iml" />
+      <module fileurl="file://$PROJECT_DIR$/server-web/server-web.iml" filepath="$PROJECT_DIR$/server-web/server-web.iml" />
+    </modules>
+  </component>
+</project>

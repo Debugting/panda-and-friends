@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#F0F0F0"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/button_bold"
+            style="@style/rich_icon"
+            android:src="@mipmap/rich_ic_bold" />
+
+        <ImageView
+            android:id="@+id/button_italic"
+            style="@style/rich_icon"
+            android:src="@mipmap/rich_ic_italic" />
+
+        <ImageView
+            android:id="@+id/button_underline"
+            style="@style/rich_icon"
+            android:src="@mipmap/rich_ic_underline" />
+
+        <ImageView
+            android:id="@+id/button_strike"
+            style="@style/rich_icon"
+            android:src="@mipmap/rich_ic_strike" />
+
+        <ImageView
+            android:id="@+id/button_image"
+            style="@style/rich_icon"
+            android:src="@mipmap/rich_ic_picture" />
+
+        <ImageView
+            android:id="@+id/button_audio"
+            style="@style/rich_icon"
+            android:src="@mipmap/rich_ic_audio" />
+
+        <ImageView
+            android:id="@+id/button_video"
+            style="@style/rich_icon"
+            android:src="@mipmap/rich_ic_video" />
+
+        <ImageView
+            android:id="@+id/button_rich_undo"
+            style="@style/rich_icon"
+            android:src="@mipmap/rich_ic_undo" />
+
+        <ImageView
+            android:id="@+id/button_rich_do"
+            style="@style/rich_icon"
+            android:src="@mipmap/rich_ic_redo" />
+    </LinearLayout>
+
+    <com.example.mod_social.rich.RichEditor
+        android:id="@+id/richEditor"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:overScrollMode="never" />
+</LinearLayout>

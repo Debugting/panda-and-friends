@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="8dp"
+    tools:ignore="MissingDefaultResource">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp">
+
+        <ImageView
+            android:id="@+id/iv_img"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题"
+            android:textColor="@color/textColor33"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_img"
+            app:layout_constraintTop_toTopOf="@+id/iv_img" />
+
+        <TextView
+            android:id="@+id/tv_word"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:text="简介简介简介简介简介简介简介简介简介简介简介简介简介"
+            android:textColor="@color/textColor66"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_img"
+            app:layout_constraintEnd_toEndOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/lineColor2"
+            app:layout_constraintTop_toBottomOf="@+id/iv_img" />
+
+        <com.example.lib_frame.widgets.IconFontImageView
+            android:id="@+id/iv_head"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/ic_default_avatar"
+            app:radius="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/textColor33"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_head"
+            app:layout_constraintStart_toEndOf="@+id/iv_head"
+            app:layout_constraintTop_toTopOf="@+id/iv_head" />
+
+        <com.example.lib_frame.widgets.IconFontImageView
+            android:id="@+id/iv_visited"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="12dp"
+            android:text="@string/ic_praised"
+            android:textColor="@color/textColor66"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_head"
+            app:layout_constraintStart_toEndOf="@+id/tv_name"
+            app:layout_constraintTop_toTopOf="@id/iv_head" />
+
+        <TextView
+            android:id="@+id/tv_visited"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="0"
+            android:textColor="@color/textColor66"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_head"
+            app:layout_constraintStart_toEndOf="@+id/iv_visited"
+            app:layout_constraintTop_toTopOf="@id/iv_head" />
+
+        <com.example.lib_frame.widgets.IconFontImageView
+            android:id="@+id/iv_praised"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="4dp"
+            android:text="@string/ic_praised"
+            android:textColor="@color/textColor66"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_head"
+            app:layout_constraintStart_toEndOf="@+id/tv_visited"
+            app:layout_constraintTop_toTopOf="@id/iv_head" />
+
+        <TextView
+            android:id="@+id/tv_praised"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="0"
+            android:textColor="@color/textColor66"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_head"
+            app:layout_constraintStart_toEndOf="@+id/iv_praised"
+            app:layout_constraintTop_toTopOf="@id/iv_head" />
+
+        <com.example.lib_frame.widgets.IconFontImageView
+            android:id="@+id/iv_collected"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="4dp"
+            android:text="@string/ic_collected"
+            android:textColor="@color/textColor66"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_head"
+            app:layout_constraintStart_toEndOf="@+id/tv_praised"
+            app:layout_constraintTop_toTopOf="@id/iv_head" />
+
+        <TextView
+            android:id="@+id/tv_collected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="0"
+            android:textColor="@color/textColor66"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_head"
+            app:layout_constraintStart_toEndOf="@+id/iv_collected"
+            app:layout_constraintTop_toTopOf="@+id/iv_head" />
+
+        <com.example.lib_frame.widgets.IconFontImageView
+            android:id="@+id/iv_comment"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="4dp"
+            android:text="@string/ic_comment"
+            android:textColor="@color/textColor66"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_head"
+            app:layout_constraintStart_toEndOf="@+id/tv_collected"
+            app:layout_constraintTop_toTopOf="@id/iv_head" />
+
+        <TextView
+            android:id="@+id/tv_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="0"
+            android:textColor="@color/textColor66"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_head"
+            app:layout_constraintStart_toEndOf="@+id/iv_comment"
+            app:layout_constraintTop_toTopOf="@+id/iv_head" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/textColor66"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_head"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_head" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

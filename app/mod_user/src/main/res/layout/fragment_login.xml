@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="@color/white"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        android:background="?attr/colorPrimary"
+        android:id="@+id/view_top"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.382"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.lib_frame.widgets.IconFontImageView
+        android:id="@+id/iv_logo"
+        android:layout_height="90dp"
+        android:layout_width="90dp"
+        android:src="@mipmap/ic_launcher"
+        android:textColor="?attr/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/view_top"
+        app:layout_constraintEnd_toEndOf="@id/view_top"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@id/view_top"
+        app:layout_constraintTop_toTopOf="@+id/view_top"
+        app:layout_constraintVertical_bias="0.396"
+        app:radius="45dp" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:layout_marginStart="28dp"
+        android:layout_width="0dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.382">
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <LinearLayout
+                android:background="@drawable/shape_grey200_r25"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:padding="4dp">
+
+                <com.example.lib_frame.widgets.IconFontImageView
+                    android:id="@+id/iv_head"
+                    android:layout_height="40dp"
+                    android:layout_width="40dp"
+                    android:text="@string/ic_default_avatar"
+                    android:textColor="?attr/colorPrimary"
+                    app:radius="20dp" />
+
+                <EditText
+                    android:background="@null"
+                    android:hint="请输入账号"
+                    android:id="@+id/et_act"
+                    android:inputType="textEmailAddress"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:maxLength="10"
+                    android:text="123456"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <com.example.lib_frame.widgets.IconFontImageView
+                    android:id="@+id/btnClearAct"
+                    android:layout_height="40dp"
+                    android:layout_width="40dp"
+                    android:padding="12dp"
+                    android:text="@string/ic_clear"
+                    android:textColor="?attr/colorPrimary" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/shape_grey200_r25"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:padding="4dp">
+
+                <com.example.lib_frame.widgets.IconFontImageView
+                    android:id="@+id/iv_see"
+                    android:layout_height="40dp"
+                    android:layout_width="40dp"
+                    android:text="@string/ic_login_pwd"
+                    android:textColor="?attr/colorPrimary" />
+
+                <EditText
+                    android:background="@null"
+                    android:hint="请输入密码"
+                    android:id="@+id/et_pwd"
+                    android:inputType="textPassword"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:maxLength="16"
+                    android:text="123456"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <com.example.lib_frame.widgets.IconFontImageView
+                    android:id="@+id/btnClearPwd"
+                    android:layout_height="40dp"
+                    android:layout_width="40dp"
+                    android:padding="12dp"
+                    android:text="@string/ic_clear"
+                    android:textColor="?attr/colorPrimary" />
+            </LinearLayout>
+
+            <Button
+                style="@style/btn"
+                android:id="@+id/btn_login"
+                android:layout_marginBottom="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="24dp"
+                android:text="登录" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/btn_find_pwd"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="找回密码"
+        android:textColor="@color/textColor33"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view_divider"
+        app:layout_constraintEnd_toStartOf="@+id/view_divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view_divider" />
+
+    <View
+        android:background="@color/textColor33"
+        android:id="@+id/view_divider"
+        android:layout_height="16dp"
+        android:layout_marginBottom="32dp"
+        android:layout_width="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_register"
+        app:layout_constraintStart_toEndOf="@+id/btn_find_pwd" />
+
+    <TextView
+        android:id="@+id/btn_register"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="注册账号"
+        android:textColor="@color/textColor33"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/view_divider"
+        app:layout_constraintTop_toTopOf="@+id/view_divider" />
+</androidx.constraintlayout.widget.ConstraintLayout>

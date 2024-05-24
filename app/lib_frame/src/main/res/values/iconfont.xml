@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ic_default_avatar">&#xe619;</string>
+    <string name="ic_login_pwd">&#xe686;</string>
+    <string name="ic_clear">&#xeb95;</string>
+
+    <string name="ic_menu">&#xe6ec;</string>
+    <string name="ic_add">&#xe61e;</string>
+    <string name="ic_add_pic">&#xe639;</string>
+    <string name="ic_add_head">&#xe619;</string>
+
+    <string name="ic_arrow_right">&#xe603;</string>
+
+    <string name="ic_visited">&#xe606;</string>
+    <string name="ic_praised">&#xe604;</string>
+    <string name="ic_praised_s">&#xe663;</string>
+    <string name="ic_collected">&#xe612;</string>
+    <string name="ic_collected_s">&#xe63b;</string>
+    <string name="ic_comment">&#xe646;</string>
+
+    <string name="ic_search">&#xe60f;</string>
+
+
+</resources>

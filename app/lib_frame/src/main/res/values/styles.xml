@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="bottom_tab_title_active">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="bottom_tab_title_inactive">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="btn">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginStart">30dp</item>
+        <item name="android:layout_marginEnd">30dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:layout_marginBottom">50dp</item>
+        <item name="android:background">@drawable/selector_btn</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">提交</item>
+    </style>
+
+    <style name="input">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textColor">@color/textColor33</item>
+        <item name="android:textColorHint">@color/textColor99</item>
+        <item name="android:background">@null</item>
+        <item name="android:drawablePadding">3dp</item>
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:drawableBottom">@drawable/selector_input_bottom_line</item>
+        <item name="android:paddingStart">8dp</item>
+    </style>
+
+    <style name="input_bg">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="input_hint">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/textColor33</item>
+    </style>
+
+    <style name="mul_input">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:lines">5</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:textColor">@color/textColor33</item>
+        <item name="android:textColorHint">@color/textColor99</item>
+        <item name="android:gravity">start</item>
+        <item name="android:background">@drawable/shape_bg_mul_input</item>
+        <item name="android:maxLength">80</item>
+    </style>
+
+    <style name="icon">
+        <item name="android:layout_width">16dp</item>
+        <item name="android:layout_height">16dp</item>
+        <item name="android:tint">?attr/colorPrimary</item>
+    </style>
+
+    <style name="H1">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/textColor33</item>
+        <item name="android:text">
+            标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题
+        </item>
+    </style>
+
+    <style name="H2">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:maxLines">3</item>
+        <item name="android:textColor">@color/textColor66</item>
+        <item name="android:text">
+            描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述
+            描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述
+            描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述
+        </item>
+    </style>
+
+    <style name="H3">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/textColor99</item>
+        <item name="android:text">2012-12-12 12:12:12</item>
+    </style>
+
+    <style name="Charge">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/holo_red_light</item>
+    </style>
+</resources>

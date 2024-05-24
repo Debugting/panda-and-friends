@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.tbpaper.dao.TbPaperDao">
+
+	<resultMap id="BaseResultMap" type="com.example.tbpaper.bean.TbPaper">
+
+		<id column="id" jdbcType="INTEGER" property="id" />
+
+		<result column="userId" jdbcType="INTEGER" property="userId" />
+
+		<result column="paperTypeId" jdbcType="INTEGER" property="paperTypeId" />
+
+		<result column="title" jdbcType="VARCHAR" property="title" />
+
+		<result column="word" jdbcType="VARCHAR" property="word" />
+
+		<result column="content" jdbcType="LONGVARCHAR" property="content" />
+
+		<result column="imgUrl" jdbcType="VARCHAR" property="imgUrl" />
+
+		<result column="imgUrl2" jdbcType="VARCHAR" property="imgUrl2" />
+
+		<result column="imgUrl3" jdbcType="VARCHAR" property="imgUrl3" />
+
+		<result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+
+		<result column="status" jdbcType="INTEGER" property="status" />
+
+	</resultMap>
+
+	<insert id="insert" keyColumn="id" keyProperty="id" useGeneratedKeys="true" >
+		insert into tb_paper (
+		userId,
+		paperTypeId,
+		title,
+		word,
+		content,
+		imgUrl,
+		imgUrl2,
+		imgUrl3,
+		status
+		)
+ 	   values (
+		 #{userId,jdbcType=INTEGER},
+		 #{paperTypeId,jdbcType=INTEGER},
+		 #{title,jdbcType=VARCHAR},
+		 #{word,jdbcType=VARCHAR},
+		 #{content,jdbcType=LONGVARCHAR},
+		 #{imgUrl,jdbcType=VARCHAR},
+		 #{imgUrl2,jdbcType=VARCHAR},
+		 #{imgUrl3,jdbcType=VARCHAR},
+		 #{status,jdbcType=INTEGER}
+		)
+
+
+	</insert>
+
+	<delete id="deleteByPrimaryKey" >
+		delete from  tb_paper 
+
+		where id = #{id} 
+ 
+
+	</delete>
+
+	<update id="update" >
+		update tb_paper
+		<set>
+			<if test="userId!=null">userId = #{userId,jdbcType=INTEGER}, </if>
+			<if test="paperTypeId!=null">paperTypeId = #{paperTypeId,jdbcType=INTEGER}, </if>
+			<if test="title!=null and title!=''">title = #{title,jdbcType=VARCHAR}, </if>
+			<if test="word!=null and word!=''">word = #{word,jdbcType=VARCHAR}, </if>
+			<if test="content!=null and content!=''">content = #{content,jdbcType=LONGVARCHAR}, </if>
+			<if test="imgUrl!=null and imgUrl!=''">imgUrl = #{imgUrl,jdbcType=VARCHAR}, </if>
+			<if test="imgUrl2!=null and imgUrl2!=''">imgUrl2 = #{imgUrl2,jdbcType=VARCHAR}, </if>
+			<if test="imgUrl3!=null and imgUrl3!=''">imgUrl3 = #{imgUrl3,jdbcType=VARCHAR}, </if>
+			<if test="createTime!=null">createTime = #{createTime,jdbcType=TIMESTAMP}, </if>
+			<if test="status!=null">status = #{status,jdbcType=INTEGER}, </if>
+		</set>
+		where id=#{id}
+
+	</update>
+
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap" >
+		select
+		id,
+		userId,
+		paperTypeId,
+		title,
+		word,
+		content,
+		imgUrl,
+		imgUrl2,
+		imgUrl3,
+		createTime,
+		status
+		from tb_paper
+		where id = #{id,jdbcType=INTEGER}
+
+	</select>
+
+	<select id="selectAll" resultMap="BaseResultMap" >
+		select
+		id,
+		userId,
+		paperTypeId,
+		title,
+		word,
+		content,
+		imgUrl,
+		imgUrl2,
+		imgUrl3,
+		createTime,
+		status
+		from tb_paper
+		<where>
+		<if test="id!=null "> and tb_paper.id = #{id,jdbcType=INTEGER}</if>
+		<if test="userId!=null "> and tb_paper.userId = #{userId,jdbcType=INTEGER}</if>
+		<if test="paperTypeId!=null "> and tb_paper.paperTypeId = #{paperTypeId,jdbcType=INTEGER}</if>
+		<if test="title!=null and title!=''"> and tb_paper.title = #{title,jdbcType=VARCHAR}</if>
+		<if test="word!=null and word!=''"> and tb_paper.word = #{word,jdbcType=VARCHAR}</if>
+		<if test="content!=null and content!=''"> and tb_paper.content = #{content,jdbcType=LONGVARCHAR}</if>
+		<if test="imgUrl!=null and imgUrl!=''"> and tb_paper.imgUrl = #{imgUrl,jdbcType=VARCHAR}</if>
+		<if test="imgUrl2!=null and imgUrl2!=''"> and tb_paper.imgUrl2 = #{imgUrl2,jdbcType=VARCHAR}</if>
+		<if test="imgUrl3!=null and imgUrl3!=''"> and tb_paper.imgUrl3 = #{imgUrl3,jdbcType=VARCHAR}</if>
+		<if test="createTime!=null "> and tb_paper.createTime = #{createTime,jdbcType=TIMESTAMP}</if>
+		<if test=" startTime!=null and startTime!='' and endTime!=null and endTime!='' "> and tb_paper.createTime BETWEEN #{startTime} and #{endTime}</if>
+		<if test="status!=null "> and tb_paper.status = #{status,jdbcType=INTEGER}</if>
+		</where>
+		<choose>
+          <when test="orderByString!=null and orderByString!=''">
+              ${orderByString}
+          </when>
+          <otherwise>
+              order by id desc
+          </otherwise>
+      </choose>
+
+	</select>
+
+	<select id="selectByCondition" resultMap="BaseResultMap" >
+		select
+		id,
+		userId,
+		paperTypeId,
+		title,
+		word,
+		content,
+		imgUrl,
+		imgUrl2,
+		imgUrl3,
+		createTime,
+		status
+		from tb_paper
+		<where>
+		<if test="id!=null "> and tb_paper.id = #{id,jdbcType=INTEGER}</if>
+		<if test="userId!=null "> and tb_paper.userId = #{userId,jdbcType=INTEGER}</if>
+		<if test="paperTypeId!=null "> and tb_paper.paperTypeId = #{paperTypeId,jdbcType=INTEGER}</if>
+		<if test="title!=null and title!=''"> and tb_paper.title = #{title,jdbcType=VARCHAR}</if>
+		<if test="word!=null and word!=''"> and tb_paper.word = #{word,jdbcType=VARCHAR}</if>
+		<if test="content!=null and content!=''"> and tb_paper.content = #{content,jdbcType=LONGVARCHAR}</if>
+		<if test="imgUrl!=null and imgUrl!=''"> and tb_paper.imgUrl = #{imgUrl,jdbcType=VARCHAR}</if>
+		<if test="imgUrl2!=null and imgUrl2!=''"> and tb_paper.imgUrl2 = #{imgUrl2,jdbcType=VARCHAR}</if>
+		<if test="imgUrl3!=null and imgUrl3!=''"> and tb_paper.imgUrl3 = #{imgUrl3,jdbcType=VARCHAR}</if>
+		<if test="createTime!=null "> and tb_paper.createTime = #{createTime,jdbcType=TIMESTAMP}</if>
+		<if test=" startTime!=null and startTime!='' and endTime!=null and endTime!='' "> and tb_paper.createTime BETWEEN #{startTime} and #{endTime}</if>
+		<if test="status!=null "> and tb_paper.status = #{status,jdbcType=INTEGER}</if>
+		</where>
+		<choose>
+          <when test="orderByString!=null and orderByString!=''">
+              ${orderByString}
+          </when>
+          <otherwise>
+              order by id desc
+          </otherwise>
+      </choose>
+
+	</select>
+
+</mapper>

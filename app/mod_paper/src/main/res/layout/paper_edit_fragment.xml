@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_type"
+                style="@style/input_bg">
+
+                <TextView
+                    style="@style/input_hint"
+                    android:text="类型：" />
+
+                <TextView
+                    android:id="@+id/btn_type"
+                    style="@style/input"
+                    android:hint="请选择类型" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/input_bg">
+
+                <TextView
+                    style="@style/input_hint"
+                    android:text="标题：" />
+
+                <EditText
+                    android:id="@+id/et_title"
+                    style="@style/input"
+                    android:hint="请输入标题"
+                    android:text="1" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/input_bg">
+
+                <TextView
+                    style="@style/input_hint"
+                    android:text="简介：" />
+
+                <EditText
+                    android:id="@+id/et_word"
+                    style="@style/mul_input"
+                    android:hint="请输入简介"
+                    android:text="1" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/input_hint"
+                android:layout_marginTop="16dp"
+                android:text="请选择图片(可选)" />
+
+            <com.example.lib_frame.widgets.mulpic.MulPicSelectView
+                android:id="@+id/mulPicSelectView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <Button
+                android:id="@+id/btn_submit"
+                style="@style/btn" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

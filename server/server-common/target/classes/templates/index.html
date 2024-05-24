@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="../static/js/layui/layui.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/js/layui/css/layui.css"/>
+
+    <script type="text/javascript" src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/global.js"></script>
+    <link rel="stylesheet" href="../static/css/index_1.css"/>
+
+    <script type="text/javascript" src="../static/js/index.js"></script>
+</head>
+<body class="main_body">
+<div class="layui-layout layui-layout-admin">
+    <!-- 顶部 -->
+    <div class="layui-header header">
+        <div class="layui-main">
+            <a href="#" class="logo">管理系统</a>
+            <!-- 顶部右侧菜单 -->
+            <ul class="layui-nav top_menu">
+                <li class="layui-nav-item showNotice" id="showNotice" pc="">
+                    <a href="javascript:closeWin()"><i class="layui-icon layui-icon-close-fill"></i><cite>关闭所有窗口</cite></a>
+                </li>
+                <li class="layui-nav-item" mobile="">
+                    <a href="/login/loginout"><i class="layui-icon layui-icon-close"></i> 退出</a>
+                </li>
+                <li class="layui-nav-item" pc="">
+                    <a href="javascript:;">
+                        <img src="/static/images/head.jpeg" onerror="defaultHead(this)" class="layui-circle" width="35"
+                             height="35">
+                        <cite>root</cite>
+                        <span class="layui-nav-more"></span></a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:void(0)" onclick="myselfinfo()"><i
+                                class="layui-icon layui-icon-password"></i><cite>修改密码</cite></a>
+                        </dd>
+                        <dd><a href="/login/loginout"><i class="layui-icon layui-icon-close"></i><cite>退出</cite></a>
+                        </dd>
+                    </dl>
+                </li>
+                <span class="layui-nav-bar" style="left: 197.188px; top: 55px; width: 0px; opacity: 0;"></span></ul>
+        </div>
+    </div>
+    <!-- 左侧导航 -->
+    <div class="layui-side layui-bg-black">
+        <div class="user-photo">
+            <a class="img" title="我的头像">
+                <img src="/static/images/head.jpeg" onerror="defaultHead(this)"></a>
+            <p>你好！<span class="userName">root</span>, 欢迎登录</p>
+        </div>
+        <div class="navBar layui-side-scroll">
+            <ul class="layui-nav layui-nav-tree" id="menus">
+                <li class="layui-nav-item"><a href="javascript:void(0)" data-url="/"><i
+                        class="layui-icon layui-icon layui-icon-set"
+                        data-icon="layui-icon layui-icon layui-icon-set"></i><cite>系统设置</cite><span
+                        class="layui-nav-more"></span></a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:void(0)" data-url="/sysAuth/gotoList"><i
+                                class="layui-icon layui-icon layui-icon layui-icon-auz"
+                                data-icon="layui-icon layui-icon layui-icon layui-icon-auz"></i><cite>权限设置</cite></a>
+                        </dd>
+                        <dd><a href="javascript:void(0)" data-url="/sysRole/gotoList"><i
+                                class="layui-icon layui-icon layui-icon-group"
+                                data-icon="layui-icon layui-icon layui-icon-group"></i><cite>角色管理</cite></a></dd>
+                        <dd><a href="javascript:void(0)" data-url="/sysUser/gotoList"><i
+                                class="layui-icon layui-icon layui-icon layui-icon-user"
+                                data-icon="layui-icon layui-icon layui-icon layui-icon-user"></i><cite>管理员设置</cite></a>
+                        </dd>
+                    </dl>
+                    <span class="layui-nav-bar" style="top: 157.5px; height: 0px; opacity: 0;"></span></li>
+                <li class="layui-nav-item layui-nav-itemed"><a href="javascript:void(0)" data-url="/"><i
+                        class="layui-icon layui-icon-username"
+                        data-icon="layui-icon layui-icon-username"></i><cite>社交管理</cite><span
+                        class="layui-nav-more"></span></a>
+                    <dl class="layui-nav-child">
+                        <dd class="layui-this"><a href="javascript:void(0)" data-url="/tbComment/gotoList"><i
+                                class="layui-icon layui-icon-dialogue"
+                                data-icon="layui-icon layui-icon-dialogue"></i><cite>评论</cite></a></dd>
+                        <dd><a href="javascript:void(0)" data-url="/tbPraised/gotoList"><i
+                                class="layui-icon layui-icon-praise" data-icon="layui-icon layui-icon-praise"></i><cite>赞过</cite></a>
+                        </dd>
+                        <dd><a href="javascript:void(0)" data-url="/tbCollected/gotoList"><i
+                                class="layui-icon layui-icon-rate"
+                                data-icon="layui-icon layui-icon-rate"></i><cite>收藏</cite></a></dd>
+                        <dd><a href="javascript:void(0)" data-url="/tbVisited/gotoList"><i
+                                class="layui-icon layui-icon-read"
+                                data-icon="layui-icon layui-icon-read"></i><cite>浏览</cite></a></dd>
+                    </dl>
+                    <span class="layui-nav-bar" style="top: 157.5px; height: 0px; opacity: 0;"></span></li>
+                <li class="layui-nav-item"><a href="javascript:void(0)" data-url="/"><i
+                        class="layui-icon layui-icon layui-icon-app"
+                        data-icon="layui-icon layui-icon layui-icon-app"></i><cite>分类管理</cite><span
+                        class="layui-nav-more"></span></a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:void(0)" data-url="/tbTag/gotoList"><i
+                                class="layui-icon layui-icon layui-icon-note"
+                                data-icon="layui-icon layui-icon layui-icon-note"></i><cite>标签管理</cite></a></dd>
+                        <dd><a href="javascript:void(0)" data-url="/tbType/gotoList"><i
+                                class="layui-icon layui-icon layui-icon-app"
+                                data-icon="layui-icon layui-icon layui-icon-app"></i><cite>类型管理</cite></a></dd>
+                    </dl>
+                    <span class="layui-nav-bar" style="top: 157.5px; height: 0px; opacity: 0;"></span></li>
+                <li class="layui-nav-item"><a href="javascript:void(0)" data-url="/tbUser/gotoList"><i
+                        class="layui-icon layui-icon layui-icon-user"
+                        data-icon="layui-icon layui-icon layui-icon-user"></i><cite>用户管理</cite></a><span
+                        class="layui-nav-bar" style="top: 157.5px; height: 0px; opacity: 0;"></span></li>
+                <li class="layui-nav-item"><a href="javascript:void(0)" data-url="/tbCourse/gotoList"><i
+                        class="layui-icon layui-icon-template-1" data-icon="layui-icon layui-icon-template-1"></i><cite>课程管理</cite></a><span
+                        class="layui-nav-bar" style="top: 157.5px; height: 0px; opacity: 0;"></span></li>
+                <li class="layui-nav-item"><a href="javascript:void(0)" data-url="/tbPaper/gotoList"><i
+                        class="layui-icon layui-icon-dialogue"
+                        data-icon="layui-icon layui-icon-dialogue"></i><cite>论坛管理</cite></a><span class="layui-nav-bar"
+                                                                                                  style="top: 157.5px; height: 0px; opacity: 0;"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 右侧内容 -->
+    <div class="layui-body layui-form">
+        <div class="layui-tab marg0" lay-filter="bodyTab">
+            <ul class="layui-tab-title top_tab">
+                <li class="" lay-id=""><i class="layui-icon layui-icon-home"></i> <cite>我的桌面</cite></li>
+                <li lay-id="1639630638970" class="layui-this"><i
+                        class="layui-icon layui-icon-dialogue"></i><cite>评论</cite><i
+                        class="layui-icon layui-unselect layui-tab-close" data-id="1">ဆ</i></li>
+            </ul>
+            <div class="layui-tab-content clildFrame">
+                <div class="layui-tab-item" style="overflow:auto">
+
+                    <iframe src="/index/gotoWelcome"></iframe>
+                </div>
+                <div class="layui-tab-item layui-show">
+                    <html>
+                    <head>
+
+                        <meta charset="utf-8">
+                        <meta name="renderer" content="webkit|ie-comp|ie-stand">
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+                        <meta name="viewport"
+                              content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+                        <script type="text/javascript" src="/static/js/layui/layui.js"></script>
+                        <link rel="stylesheet" type="text/css" href="/static/js/layui/css/layui.css">
+
+                        <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+                        <script src="/static/js/global.js"></script>
+                        <script type="text/javascript">
+                            /*<![CDATA[*/
+                            var rootPath = "\/";
+                            /*]]>*/
+                            var alertTime = 1500;
+                            $(function () {
+                                init(rootPath);
+                            })
+
+                            function myAlert(msg) {
+                                layer.alert(msg);
+                            }
+
+                            function myConfirm(msg, callback1, callback2) {
+                                var index = layer.confirm(msg, {
+                                    btn: ['确定', '取消'] //按钮
+                                }, function () {
+                                    if (callback1) {
+                                        callback1()
+                                    }
+                                    layer.close(index)
+                                }, function () {
+                                    if (callback2) {
+                                        callback2()
+                                    }
+                                });
+                            }
+
+                            function loads() {
+                                window.location.reload();
+                            }
+
+                            function myback(url) {
+                                if (url) {
+                                    window.location.href = rootPath + url;
+                                } else {
+                                    window.history.go(-1);
+                                }
+                            }
+
+                            function openUrl(url) {
+                                layer.open({
+                                    type: 2,
+                                    title: '详情',
+                                    shadeClose: true,
+                                    maxmin: true,
+                                    shade: 0.8,
+                                    area: ['1025px', '500px'],
+                                    content: rootPath + url
+                                });
+                            }
+
+                            $.fn.serializeObject = function () {
+                                var o = {};
+                                var a = this.serializeArray();
+                                $.each(a, function () {
+                                    if (o[this.name]) {
+                                        if (!o[this.name].push) {
+                                            o[this.name] = [o[this.name]];
+                                        }
+                                        o[this.name].push(this.value || '');
+                                    } else {
+                                        o[this.name] = this.value || '';
+                                    }
+                                });
+                                return o;
+                            };
+
+                            function defaultImage(obj) {
+                                obj.src = rootPath + "static/images/loadError.png";
+                            }
+
+                            function defaultHead(obj) {
+                                obj.src = rootPath + "static/images/head.jpeg";
+                            }
+                        </script>
+                        <style>
+                            .body-common {
+                                margin-top: 1rem;
+                                margin-left: 1rem;
+                                margin-right: 1rem;
+                            }
+                        </style>
+                        <link id="layuicss-layer" rel="stylesheet"
+                              href="http://localhost:8080/static/js/layui/css/modules/layer/default/layer.css?v=3.1.1"
+                              media="all">
+                        <link id="layuicss-laydate" rel="stylesheet"
+                              href="http://localhost:8080/static/js/layui/css/modules/laydate/default/laydate.css?v=5.0.9"
+                              media="all">
+                    </head>
+
+                    <body class="body-common" style="">
+                    <div class="page-container">
+                        <blockquote class="layui-elem-quote">
+                            <form id="dataForm" class="layui-form">
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <input type="text" name="id" id="id" placeholder="id" class="layui-input">
+                                    </div>
+                                    <div class="layui-inline" style="display: none">
+                                        <input type="text" name="dataType" id="dataType" placeholder="数据类型"
+                                               class="layui-input">
+                                    </div>
+                                    <div class="layui-inline" style="display: none">
+                                        <input type="text" name="outId" id="outId" placeholder="外键" class="layui-input">
+                                    </div>
+                                    <div class="layui-inline" style="display: none">
+                                        <input type="text" name="word" id="word" placeholder="评论内容" class="layui-input">
+                                    </div>
+                                    <div class="layui-inline" style="display: none">
+                                        <input type="text" name="userId" id="userId" placeholder="评论用户"
+                                               class="layui-input">
+                                    </div>
+                                    <div class="layui-inline" style="display: none">
+                                        <input type="text" name="replyUserId" id="replyUserId" placeholder="回复用户"
+                                               class="layui-input">
+                                    </div>
+                                    <div class="layui-inline" style="display: none">
+                                        <input type="text" name="createTime" id="createTime" placeholder="创建时间"
+                                               class="layui-input">
+                                    </div>
+                                    <div class="layui-inline">
+                                        <input type="button" name="" class="layui-btn" onclick="loadMyData()"
+                                               data-type="reload" value="搜索">
+                                    </div>
+                                </div>
+                            </form>
+                        </blockquote>
+                        <div class="mt-20">
+                            <table id="table-data" lay-filter="table-data"></table>
+                            <div class="layui-form layui-border-box layui-table-view" lay-filter="LAY-table-1"
+                                 lay-id="table-data" style=" ">
+                                <div class="layui-table-tool">
+                                    <div class="layui-table-tool-temp"><a
+                                            class="layui-btn layui-btn-normal layui-btn-sm"
+                                            href="/tbComment/gotoDetail"><i class="layui-icon layui-icon-add-1"></i> 新增</a>
+                                        <a href="javascript:void(0)" onclick="exports()"
+                                           class="layui-btn layui-btn-warm layui-btn-sm"> <i
+                                                class="layui-icon layui-icon-download-circle"></i> 导出</a></div>
+                                    <div class="layui-table-tool-self">
+                                        <div class="layui-inline" title="筛选列" lay-event="LAYTABLE_COLS"><i
+                                                class="layui-icon layui-icon-cols"></i></div>
+                                        <div class="layui-inline" title="导出" lay-event="LAYTABLE_EXPORT"><i
+                                                class="layui-icon layui-icon-export"></i></div>
+                                        <div class="layui-inline" title="打印" lay-event="LAYTABLE_PRINT"><i
+                                                class="layui-icon layui-icon-print"></i></div>
+                                    </div>
+                                </div>
+                                <div class="layui-table-box">
+                                    <div class="layui-table-header">
+                                        <table cellspacing="0" cellpadding="0" border="0" class="layui-table">
+                                            <thead>
+                                            <tr>
+                                                <th data-field="id" data-key="1-0-0" data-unresize="true" class="">
+                                                    <div class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox">
+                                                        <input type="checkbox" name="layTableCheckbox"
+                                                               lay-skin="primary" lay-filter="layTableAllChoose">
+                                                        <div class="layui-unselect layui-form-checkbox"
+                                                             lay-skin="primary"><i class="layui-icon layui-icon-ok"></i>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th data-field="id" data-key="1-0-1" class="">
+                                                    <div class="layui-table-cell laytable-cell-1-0-1"><span>id</span>
+                                                    </div>
+                                                </th>
+                                                <th data-field="8" data-key="1-0-8" class=" layui-table-col-special">
+                                                    <div class="layui-table-cell laytable-cell-1-0-8"><span>操作</span>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div class="layui-table-body layui-table-main">
+                                        <table cellspacing="0" cellpadding="0" border="0" class="layui-table">
+                                            <tbody>
+                                            <tr data-index="0">
+                                                <td data-field="id" data-key="1-0-0" class="">
+                                                    <div class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox">
+                                                        <input type="checkbox" name="layTableCheckbox"
+                                                               lay-skin="primary">
+                                                        <div class="layui-unselect layui-form-checkbox"
+                                                             lay-skin="primary"><i class="layui-icon layui-icon-ok"></i>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td data-field="8" data-key="1-0-8" data-off="true"
+                                                    class="layui-table-col-special">
+                                                    <div class="layui-table-cell laytable-cell-1-0-8"><a
+                                                            class="layui-btn layui-btn-xs" lay-event="edit"><i
+                                                            class="layui-icon layui-icon-edit"></i>编辑</a> <a
+                                                            class="layui-btn layui-btn-danger layui-btn-xs"
+                                                            lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <table cellspacing="0" cellpadding="0" border="0" class="layui-table">
+                                <tbody>
+                                <tr data-index="0" class="">
+                                    <td data-field="id" data-key="1-0-0" class="">
+                                        <div class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox"><input
+                                                type="checkbox" name="layTableCheckbox" lay-skin="primary">
+                                            <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i
+                                                    class="layui-icon layui-icon-ok"></i></div>
+                                        </div>
+                                    </td>
+                                    <td data-field="id" data-key="1-0-1" class="">
+                                        <div class="layui-table-cell laytable-cell-1-0-1">27</div>
+                                    </td>
+
+                                    <td data-field="8" data-key="1-0-8" data-off="true" class="layui-table-col-special">
+                                        <div class="layui-table-cell laytable-cell-1-0-8"><a
+                                                class="layui-btn layui-btn-xs" lay-event="edit"><i
+                                                class="layui-icon layui-icon-edit"></i>编辑</a> <a
+                                                class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i
+                                                class="layui-icon layui-icon-delete"></i>删除</a></div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <script type="text/html" id="barDemo">
+
+                        <a class="layui-btn layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
+                        </span>
+
+                        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i
+                                class="layui-icon layui-icon-delete"></i>删除</a>
+                        </span>
+                    </script>
+                    <script type="text/html" id="toolbar-data">
+                        <a class="layui-btn layui-btn-normal layui-btn-sm" href="/tbComment/gotoDetail"><i
+                                class="layui-icon layui-icon-add-1"></i> 新增</a>
+                        </span>
+
+                        <a href="javascript:void(0)" onclick="exports()" class="layui-btn layui-btn-warm layui-btn-sm">
+                            <i class="layui-icon layui-icon-download-circle"></i> 导出</a>
+                        </span>
+                    </script>
+                    <!--请在下方写此页面业务相关的脚本-->
+                    <script type="text/javascript">
+                        var table;
+                        layui.use(['form', 'table', 'laydate'], function () {
+                            var form = layui.form; //只有执行了这一步，部分表单元素才会自动修饰成功
+                            //但是，如果你的HTML是动态生成的，自动渲染就会失效
+                            //因此你需要在相应的地方，执行下述方法来手动渲染，跟这类似的还有 element.init();
+                            form.render();
+                            table = layui.table;
+                            //第一个实例
+                            table.render({
+                                elem: '#table-data'
+                                , toolbar: '#toolbar-data'
+                                , url: getDataUrl()  //数据接口
+                                , method: "post"
+                                , page: true //开启分页
+                                , cols: [[ //表头
+                                    {field: 'id', title: 'id', type: "checkbox"}
+                                    , {
+                                        field: 'id',
+                                        title: 'id'
+                                    }
+                                    , {
+                                        field: 'dataType',
+                                        title: '数据类型'
+                                    }
+                                    , {
+                                        field: 'outId',
+                                        title: '外键'
+                                    }
+                                    , {
+                                        field: 'word',
+                                        title: '评论内容'
+                                    }
+                                    , {
+                                        field: 'userId',
+                                        title: '评论用户'
+                                    }
+                                    , {
+                                        field: 'replyUserId',
+                                        title: '回复用户'
+                                    }
+                                    , {field: 'createTime_', title: '创建时间'}
+                                    //addCodeCol
+                                    , {title: '操作', toolbar: '#barDemo', width: 150}
+                                ]],
+                                parseData: function (res) { //res 即为原始返回的数据
+                                    return {
+                                        "code": res.code, //解析接口状态
+                                        "msg": res.message, //解析提示文本
+                                        "count": res.data.total, //解析数据长度
+                                        "data": res.data.rows //解析数据列表
+                                    };
+                                },
+                                "request": {
+                                    pageName: 'page' //页码的参数名称，默认：page
+                                    , limitName: 'pageSize' //每页数据量的参数名，默认：limit
+                                },
+                                "response": {
+                                    statusName: 'code' //规定数据状态的字段名称，默认：code
+                                    , statusCode: 0 //规定成功的状态码，默认：0
+                                }
+                            });
+                            //监听行工具事件
+                            table.on('tool(table-data)', function (obj) {
+                                var data = obj.data;
+                                //console.log(obj)
+                                if (obj.event === 'del') {
+                                    myConfirm("确定要删除吗?", function (index) {
+                                        obj.del();
+                                        $.post(rootPath + "tbComment/deleteByPrimaryKey", {"id": data.id}, function (data) {
+                                            myAlert("删除成功");
+                                            setTimeout(function () {
+                                                loadMyData()
+                                            }, 2000)
+                                        });
+                                        layer.close(index);
+                                    })
+                                } else if (obj.event === 'edit') {
+                                    window.location.href = rootPath + "tbComment/gotoDetail?id=" + data.id;
+                                }
+                            });
+
+                            laydate.render({
+                                elem: '#createTime'
+                                , type: 'datetime'
+                            });
+                            /*初始化日期选择框 end*/
+                        });
+
+                        //组装url,如果页面有值传过来,则组装
+                        function getDataUrl() {
+                            var fkey = null;
+                            var fvalue = null;
+                            var furl = null;
+                            var param = "";
+                            if (fkey && fvalue) {
+                                param = "?" + fkey[0] + "=" + fvalue[0];
+                            }
+
+                            if (!furl) {
+                                furl = "tbComment/selectAllByPaging";
+                            } else {
+                                furl = furl[0];
+                            }
+                            return rootPath + furl + param;
+                        }
+
+                        function loadMyData() {
+                            table.reload("table-data", {
+                                where: $("#dataForm").serializeObject()
+                                , page: {
+                                    curr: 1 //重新从第 1 页开始
+                                }
+                            });
+                        }
+
+                        //导出
+                        function exports() {
+                            window.location.href = rootPath + "tbComment/export?" + $("#dataForm").serialize()
+                        }
+
+                    </script>
+
+                    </body>
+                    </html>
+                </div>
+                </iframe></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- 移动导航 -->
+<div class="site-tree-mobile layui-hide"><i class="layui-icon"></i></div>
+<div class="site-mobile-shade"></div>
+
+
+</body>
+
+<!-- 移动导航 -->
+<div class="site-tree-mobile layui-hide"><i class="layui-icon">&#xe602;</i></div>
+<div class="site-mobile-shade"></div>
+
+</body>
+</html>

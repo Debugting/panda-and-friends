@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="theme">
+        <attr name="iconColor" format="color" />
+        <attr name="iconPressColor" format="color" />
+        <attr name="btnColor" format="color" />
+        <attr name="btnPressColor" format="color" />
+    </declare-styleable>
+
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/zhihuBlue</item>
+        <item name="colorPrimaryDark">@color/zhihuBlue</item>
+        <item name="colorAccent">@color/zhihuBlue</item>
+        <item name="iconColor">@color/zhihuBlue</item>
+        <item name="btnPressColor">@color/zhihuBlue50</item>
+        <item name="iconPressColor">@color/zhihuBlue</item>
+        <item name="btnColor">@color/zhihuBlue</item>
+        <item name="android:statusBarColor">@color/zhihuBlue</item>
+        <item name="android:screenOrientation">portrait</item>
+    </style>
+
+    <style name="ZhiHuBlueTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/zhihuBlue</item>
+        <item name="colorPrimaryDark">@color/zhihuBlue</item>
+        <item name="colorAccent">@color/zhihuBlue</item>
+        <item name="iconColor">@color/zhihuBlue</item>
+        <item name="btnPressColor">@color/zhihuBlue50</item>
+        <item name="btnColor">@color/zhihuBlue</item>
+        <item name="android:statusBarColor">@color/zhihuBlue</item>
+    </style>
+
+    <style name="meituanYellowTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/meituanYellow</item>
+        <item name="colorPrimaryDark">@color/meituanYellow</item>
+        <item name="colorAccent">@color/meituanYellow</item>
+        <item name="iconColor">@color/meituanYellow</item>
+        <item name="btnPressColor">@color/meituanYellow50</item>
+        <item name="btnColor">@color/meituanYellow</item>
+        <item name="android:statusBarColor">@color/meituanYellow</item>
+    </style>
+
+    <style name="BiLiPinkTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/biliPink</item>
+        <item name="colorPrimaryDark">@color/biliPink</item>
+        <item name="colorAccent">@color/biliPink</item>
+        <item name="iconColor">@color/biliPink</item>
+        <item name="btnColor">@color/biliPink</item>
+        <item name="btnPressColor">@color/biliPink50</item>
+        <item name="android:statusBarColor">@color/biliPink</item>
+    </style>
+
+    <style name="KuAnGreenTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/kuanGreen</item>
+        <item name="colorAccent">@color/kuanGreen</item>
+        <item name="colorPrimaryDark">@color/kuanGreen50</item>
+        <item name="iconColor">@color/kuanGreen</item>
+        <item name="btnPressColor">@color/kuanGreen50</item>
+        <item name="btnColor">@color/kuanGreen</item>
+        <item name="android:statusBarColor">@color/kuanGreen</item>
+    </style>
+
+    <style name="CloudRedTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/cloudRed</item>
+        <item name="colorAccent">@color/cloudRed</item>
+        <item name="colorPrimaryDark">@color/cloudRed50</item>
+        <item name="iconColor">@color/cloudRed</item>
+        <item name="btnPressColor">@color/cloudRed50</item>
+        <item name="btnColor">@color/cloudRed</item>
+        <item name="android:statusBarColor">@color/cloudRed</item>
+    </style>
+
+    <style name="TengLuoPurpleTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/tengluoPurple</item>
+        <item name="colorAccent">@color/tengluoPurple</item>
+        <item name="colorPrimaryDark">@color/tengluoPurple50</item>
+        <item name="iconColor">@color/tengluoPurple</item>
+        <item name="btnPressColor">@color/tengluoPurple50</item>
+        <item name="btnColor">@color/tengluoPurple</item>
+        <item name="android:statusBarColor">@color/tengluoPurple</item>
+    </style>
+
+    <style name="SeaBlueTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/seaBlue</item>
+        <item name="colorAccent">@color/seaBlue</item>
+        <item name="colorPrimaryDark">@color/seaBlue50</item>
+        <item name="iconColor">@color/seaBlue</item>
+        <item name="btnPressColor">@color/seaBlue50</item>
+        <item name="btnColor">@color/seaBlue</item>
+        <item name="android:statusBarColor">@color/seaBlue</item>
+    </style>
+
+    <style name="GrassGreenTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/grassGreen</item>
+        <item name="colorAccent">@color/grassGreen</item>
+        <item name="colorPrimaryDark">@color/grassGreen50</item>
+        <item name="iconColor">@color/grassGreen</item>
+        <item name="btnPressColor">@color/grassGreen50</item>
+        <item name="btnColor">@color/grassGreen</item>
+        <item name="android:statusBarColor">@color/grassGreen</item>
+    </style>
+
+    <style name="CoffeeBrownTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/coffeeBrown</item>
+        <item name="colorAccent">@color/coffeeBrown</item>
+        <item name="colorPrimaryDark">@color/coffeeBrown50</item>
+        <item name="iconColor">@color/coffeeBrown</item>
+        <item name="btnPressColor">@color/coffeeBrown50</item>
+        <item name="btnColor">@color/coffeeBrown</item>
+        <item name="android:statusBarColor">@color/coffeeBrown</item>
+    </style>
+
+    <style name="LemonOrangeTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/lemonOrange</item>
+        <item name="colorAccent">@color/lemonOrange</item>
+        <item name="colorPrimaryDark">@color/lemonOrange50</item>
+        <item name="iconColor">@color/lemonOrange</item>
+        <item name="btnPressColor">@color/lemonOrange50</item>
+        <item name="btnColor">@color/lemonOrange</item>
+        <item name="android:statusBarColor">@color/lemonOrange</item>
+    </style>
+
+    <style name="StartSkyGrayTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/startSkyGray</item>
+        <item name="colorAccent">@color/startSkyGray</item>
+        <item name="colorPrimaryDark">@color/startSkyGray50</item>
+        <item name="iconColor">@color/startSkyGray</item>
+        <item name="btnPressColor">@color/startSkyGray50</item>
+        <item name="btnColor">@color/startSkyGray</item>
+        <item name="android:statusBarColor">@color/startSkyGray</item>
+    </style>
+</resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mod_course" />
+        <module name="mod_user" />
+        <module name="mod_check_in" />
+        <module name="mod_paper" />
+        <module name="mod_note" />
+        <module name="mod_notice" />
+        <module name="mod_accounting" />
+        <module name="server-web" />
+        <module name="server-common" />
+        <module name="mod_social" />
+        <module name="mod_programme" />
+        <module name="server-generator" />
+        <module name="server-sys" />
+        <module name="mod_house" />
+        <module name="mod_schedule" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mod_accounting" target="1.8" />
+      <module name="mod_check_in" target="1.8" />
+      <module name="mod_course" target="1.8" />
+      <module name="mod_house" target="1.8" />
+      <module name="mod_note" target="1.8" />
+      <module name="mod_notice" target="1.8" />
+      <module name="mod_paper" target="8" />
+      <module name="mod_programme" target="1.8" />
+      <module name="mod_schedule" target="1.8" />
+      <module name="mod_social" target="8" />
+      <module name="mod_user" target="8" />
+      <module name="server" target="1.8" />
+      <module name="server-common" target="1.8" />
+      <module name="server-generator" target="1.8" />
+      <module name="server-programme" target="1.8" />
+      <module name="server-sys" target="1.8" />
+      <module name="server-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="mod_accounting" options="-parameters" />
+      <module name="mod_check_in" options="-parameters" />
+      <module name="mod_course" options="-parameters" />
+      <module name="mod_house" options="-parameters" />
+      <module name="mod_note" options="-parameters" />
+      <module name="mod_notice" options="-parameters" />
+      <module name="mod_paper" options="" />
+      <module name="mod_programme" options="-parameters" />
+      <module name="mod_schedule" options="-parameters" />
+      <module name="mod_social" options="" />
+      <module name="mod_user" options="" />
+      <module name="server-common" options="-parameters" />
+      <module name="server-generator" options="-parameters" />
+      <module name="server-programme" options="-parameters" />
+      <module name="server-sys" options="-parameters" />
+      <module name="server-web" options="-parameters" />
+    </option>
+  </component>
+</project>

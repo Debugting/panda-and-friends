@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/input_bg">
+
+                <TextView
+                    style="@style/input_hint"
+                    android:text="原密码：" />
+
+                <EditText
+                    android:id="@+id/et_old_pwd"
+                    style="@style/input"
+                    android:hint="请输入原密码"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="16" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/input_bg">
+
+                <TextView
+                    style="@style/input_hint"
+                    android:text="新密码：" />
+
+                <EditText
+                    android:id="@+id/et_pwd"
+                    style="@style/input"
+                    android:hint="请输入新密码"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="16" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/input_bg">
+
+                <TextView
+                    style="@style/input_hint"
+                    android:text="确认密码：" />
+
+                <EditText
+                    android:id="@+id/et_pwd_again"
+                    style="@style/input"
+                    android:hint="请再次输入密码"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="16" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_submit"
+                style="@style/btn" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
